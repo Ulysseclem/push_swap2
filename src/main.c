@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 14:45:52 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/01 11:20:00 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:55:55 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*create_stack(int content)
 	if (!stack)
 		return (NULL);
 	stack->content = content;
-	stack->index = 0;
+	// stack->index = 0;
 	stack->next = NULL;
 	return (stack);
 }

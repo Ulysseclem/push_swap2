@@ -50,7 +50,9 @@ OBJS        := $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 SRC_DIR_BONUS	:= bonus
 SRCS_BONUS		:=main.c \
 				get_next_line.c \
-				get_next_line_utils.c
+				get_next_line_utils.c\
+				swap_utils_bonus.c \
+				swap_function.c 
 
 SRCS_BONUS	:= $(SRCS_BONUS:%=$(SRC_DIR_BONUS)/%)
 BUILD_DIR_B   := .build_b
@@ -58,6 +60,7 @@ OBJS_BONUS	:= $(SRCS_BONUS:$(SRC_DIR_BONUS)/%.c=$(BUILD_DIR_B)/%.o)
 
 # BONUS --------------------------
 DEPS        := $(OBJS:.o=.d)
+DEPS_B        := $(OBJS_BONUS:.o=.d)
 
 CC          := clang
 CFLAGS      := -Wall -Wextra -Werror
@@ -104,11 +107,13 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 	$(info CREATED $@)
 
+-include $(DEPS)
+
 #bonus
 bonus: $(BONUS)
 
 $(BONUS): $(OBJS_BONUS)
-	$(CC) $(OBJS_BONUS) -o $(BONUS)
+	$(CC) $(LDFLAGS) $(OBJS_BONUS) $(LDLIBS) -o $(BONUS)
 	$(info CREATED $(BONUS))
 
 $(BUILD_DIR_B)/%.o: $(SRC_DIR_BONUS)/%.c
@@ -117,12 +122,12 @@ $(BUILD_DIR_B)/%.o: $(SRC_DIR_BONUS)/%.c
 	$(info CREATED2 $@)
 #bonus
 
--include $(DEPS)
+-include $(DEPS_B)
 
 clean:
 	for f in $(dir $(LIBS_TARGET)); do $(MAKE) -C $$f clean; done
 	$(RM) $(OBJS) $(DEPS)
-	$(RM) $(OBJS_BONUS) $(DEPS)
+	$(RM) $(OBJS_BONUS) $(DEPS_B)
 
 fclean: clean
 	for f in $(dir $(LIBS_TARGET)); do $(MAKE) -C $$f fclean; done

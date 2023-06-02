@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:03:28 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/01 11:38:27 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:53:39 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	print_move(int call)
 	if (call == 6)
 		write(1, "ra\n", 3);
 	if (call == 7)
-		write(1, "sb\n", 3);
+		write(1, "rb\n", 3);
 	if (call == 8)
 		write(1, "rr\n", 3);
 	if (call == 9)

@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:48:18 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/01 11:17:04 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:53:55 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	compteur(t_instruct *count, int call)
 	if (call == 11)
 		count->rrr = 1 + count->rrr;
 }
+
 
 void	search_index_min(t_stack **a, t_stack **b)
 {
