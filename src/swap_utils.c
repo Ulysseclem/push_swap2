@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:12:39 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/01 11:20:48 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:38:54 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ long long int	ps_atoi(const char *nptr)
 			neg = -1;
 		i++;
 	}
+	while (nptr[i] == '0')
+		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		num = num * 10 + (nptr[i] - 48);
