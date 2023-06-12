@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:08:42 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/08 17:21:32 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/12 15:00:48 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	doublon(t_stack	*lst)
 
 int	is_sort(t_stack *a)
 {
+	if (a->next == NULL)
+		return (0);
 	while (a->content > a->next->content)
 	{
 		a = a->next;

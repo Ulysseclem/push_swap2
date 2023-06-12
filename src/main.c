@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 14:45:52 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/08 17:52:28 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/12 15:03:41 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void	to_list_a(char **argv, int argc, t_stack **stack_a)
 	int				i;
 
 	i = 1;
-	if (argc <= 2)
-		error_exit();
 	while (i < argc)
 	{
 		nbr = ps_atoi(argv[i]);
@@ -61,6 +59,8 @@ int	main(int argc, char **argv)
 
 	stack_b = NULL;
 	to_list_a(argv, argc, &stack_a);
+	if (argc < 2)
+		return (0);
 	if (doublon(stack_a) == 0)
 	{
 		free_lst(&stack_a);
