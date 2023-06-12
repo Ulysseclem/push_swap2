@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:08:42 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/01 11:09:41 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:21:32 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-int	parsing(t_stack	*lst)
+int	doublon(t_stack	*lst)
 {
 	t_stack	*tmp;
 

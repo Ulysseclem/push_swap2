@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:53:31 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/02 11:54:50 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:29:57 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,31 @@ void	to_list_a(char **argv, int argc, t_stack **stack_a)
 	}
 }
 
-void	print_list(t_stack *stack)
+// void	print_list(t_stack *stack)
+// {
+// 	while (stack != NULL)
+// 	{
+// 		printf ("%d\n", stack->content);
+// 		stack = stack->next;
+// 	}
+// }
+
+int	doublon(t_stack	*lst)
 {
-	while (stack != NULL)
+	t_stack	*tmp;
+
+	while (lst->next != NULL)
 	{
-		printf ("%d\n", stack->content);
-		stack = stack->next;
+		tmp = lst->next;
+		while (tmp != NULL)
+		{
+			if (lst->content == tmp->content)
+				error_exit();
+			tmp = tmp->next;
+		}
+		lst = lst->next;
 	}
+	return (1);
 }
 
 int	is_sort(t_stack *a)
@@ -106,13 +124,14 @@ int	main(int argc, char	**argv)
 	stack_b = NULL;
 
 	to_list_a(argv, argc, &stack_a);
+	doublon(stack_a);
 	line = get_next_line(0);
 	while (line)
 	{
 		apply_function(&stack_a, &stack_b, line);
 		line = get_next_line(0);
 	}
-	print_list(stack_a);
+	// print_list(stack_a);
 	if (is_sort(stack_a) == 1)
 		write (1, "ko", 2);
 	else
@@ -120,26 +139,3 @@ int	main(int argc, char	**argv)
 	return (0);
 	free_lst(&stack_a);
 }
-
-
-	// t_stack	*stack_b;
-
-	// stack_b = NULL;
-	// to_list_a(argv, argc, &stack_a);
-	// if (parsing(stack_a) == 0)
-	// {
-	// 	free_lst(&stack_a);
-	// 	error_exit();
-	// }
-	// if (is_sort(stack_a) == 0)
-	// {
-	// 	free_lst(&stack_a);
-	// 	return (0);
-	// }
-	// index_maker(&stack_a);
-	// median_sort(&stack_a, &stack_b);
-	// while (stack_b)
-	// 	iter_index(&stack_a, &stack_b);
-	// last_sort(&stack_a, &stack_b);
-	// free_lst(&stack_a);
-	// free_lst(&stack_b);

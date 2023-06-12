@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 11:34:14 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/02 11:53:03 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:14:43 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strdup(const char *s);
 
 
 void	free_lst(t_stack	**lst);
-long long int	ps_atoi(const char *nptr);
+int		ps_atoi(const char *nptr);
 void	ps_lstadd_front(t_stack **lst, t_stack *new);
 int		ps_lstsize(t_stack *lst);
 t_stack	*ps_lstlast(t_stack *lst);
@@ -62,5 +62,7 @@ void	reverse(t_stack	**stack);
 void	pair_swap(t_stack **stack);
 
 void	print_list(t_stack *stack);
+
+int		doublon(t_stack	*lst);
 
 #endif

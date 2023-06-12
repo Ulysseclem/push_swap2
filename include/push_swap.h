@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:28:29 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/01 11:34:06 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:20:24 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	reverse(t_stack	**stack);
 
 void	free_lst(t_stack	**lst);
 
-int		parsing(t_stack	*lst);
+int		doublon(t_stack	*lst);
 
 void	move(t_stack **stack_a, t_stack **stack_b, int call);
 void	move_2(t_stack **stack_a, t_stack **stack_b, int call);
@@ -77,7 +77,7 @@ void	double_move(t_stack **stack_a, t_stack **stack_b, int call);
 
 int		is_sort(t_stack *a);
 
-long long int	ps_atoi(const char *nptr);
+int	ps_atoi(const char *nptr);
 
 void	push_suite(t_stack **receiver, t_stack *curr);
 int		iter_i_min(t_stack **b, int min);
