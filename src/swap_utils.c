@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:12:39 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/12 14:42:41 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:58:32 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,39 +23,6 @@ void	free_lst(t_stack	**lst)
 		(*lst) = (*lst)->next;
 		free(tmp);
 	}
-}
-
-int	ps_atoi(const char *nptr)
-{
-	long long int	num;
-	int				i;
-	int				test;
-	int				neg;
-
-	i = 0;
-	num = 0;
-	neg = 1;
-	while ((nptr[i] >= 8 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
-	{
-		if (nptr[i] == '-')
-			neg = -1;
-		i++;
-	}
-	if (nptr[i] < '0' || nptr[i] > '9')
-		error_exit();
-	while (nptr[i] != '\0')
-	{
-		if (nptr[i] < '0' || nptr[i] > '9')
-			error_exit();
-		num = num * 10 + (nptr[i] - 48);
-		i++;
-	}
-	if ((num > 2147483648 && neg == -1) || (num > 2147483647 && neg == 1))
-		error_exit();
-	test = num;
-	return (test * neg);
 }
 
 void	ps_lstadd_front(t_stack **lst, t_stack *new)

@@ -6,7 +6,7 @@
 /*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:39:18 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/08 17:59:32 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/13 14:19:00 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,6 @@ void	median_sort(t_stack **a, t_stack **b)
 	}
 	three(a, b);
 }
-
-
 
 void	three(t_stack **a, t_stack **b)
 {

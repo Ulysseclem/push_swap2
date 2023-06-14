@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:08:42 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/13 16:12:09 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/13 16:42:00 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 #include "libft.h"
 
-int	parsing(t_stack **a)
-{
-	if (doublon(*a) == 0)
-	{
-		free_lst(a);
-		error_exit();
-	}
-	if (is_sort(a) == 0)
-	{
-		free_lst(a);
-		return (0);
-	}
-	return (1);
-}
-
-int	doublon(t_stack	*lst)
+void	doublon(t_stack	*lst)
 {
 	t_stack	*tmp;
 
@@ -38,33 +23,11 @@ int	doublon(t_stack	*lst)
 		while (tmp != NULL)
 		{
 			if (lst->content == tmp->content)
-				return (0);
+				error_exit();
 			tmp = tmp->next;
 		}
 		lst = lst->next;
 	}
-	return (1);
-}
-
-int	is_sort(t_stack **a)
-{
-	t_stack *tmp;
-
-	tmp = *a;
-	if (tmp->next == NULL)
-		return (0);
-	while (tmp->content > tmp->next->content)
-	{
-		tmp = tmp->next;
-		if (tmp->next == NULL)
-			return (0);
-	}
-	if (ps_lstsize(*a) == 2)
-	{
-		move(a, NULL, 1);
-		return(0);
-	}
-	return (1);
 }
 
 int	ps_atoi(const char *nptr)

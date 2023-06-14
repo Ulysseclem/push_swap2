@@ -6,7 +6,7 @@
 /*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 11:34:14 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/08 17:14:43 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/13 16:42:52 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	*ft_strdup(const char *s);
 
 void	free_lst(t_stack	**lst);
 int		ps_atoi(const char *nptr);
+int ps_atoi_suite(const char *nptr, int i, int neg);
 void	ps_lstadd_front(t_stack **lst, t_stack *new);
 int		ps_lstsize(t_stack *lst);
 t_stack	*ps_lstlast(t_stack *lst);
@@ -63,6 +64,6 @@ void	pair_swap(t_stack **stack);
 
 void	print_list(t_stack *stack);
 
-int		doublon(t_stack	*lst);
+void	doublon(t_stack	*lst);
 
 #endif

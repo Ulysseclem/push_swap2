@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 14:45:52 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/12 15:03:41 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:10:45 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,8 @@ int	main(int argc, char **argv)
 	to_list_a(argv, argc, &stack_a);
 	if (argc < 2)
 		return (0);
-	if (doublon(stack_a) == 0)
-	{
-		free_lst(&stack_a);
-		error_exit();
-	}
-	if (is_sort(stack_a) == 0)
-	{
-		free_lst(&stack_a);
+	if (parsing(&stack_a) == 0)
 		return (0);
-	}
-	if (argc == 4)
-		three(&stack_a, &stack_b);
 	else
 	{
 		index_maker(&stack_a);

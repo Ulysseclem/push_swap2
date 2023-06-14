@@ -6,7 +6,7 @@
 /*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:28:29 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/08 17:20:24 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/13 16:11:39 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,10 @@ void	sort_b_stack(t_stack **a, t_stack **b, int min);
 
 void	double_move(t_stack **stack_a, t_stack **stack_b, int call);
 
-int		is_sort(t_stack *a);
+int		is_sort(t_stack **a);
 
 int	ps_atoi(const char *nptr);
+int	ps_atoi_suite(const char *nptr, int i, int neg);
 
 void	push_suite(t_stack **receiver, t_stack *curr);
 int		iter_i_min(t_stack **b, int min);
@@ -93,5 +94,7 @@ int	ps_lstsize(t_stack *lst);
 void	ps_lstadd_front(t_stack **lst, t_stack *new);
 
 t_stack	*ps_lstlast(t_stack *lst);
+
+int	parsing(t_stack **a);
 
 #endif

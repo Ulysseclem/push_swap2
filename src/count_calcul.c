@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_calcul.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:48:18 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/02 13:53:55 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/13 09:55:51 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,30 +55,31 @@ void	compteur(t_instruct *count, int call)
 		count->rrr = 1 + count->rrr;
 }
 
-
 void	search_index_min(t_stack **a, t_stack **b)
 {
 	t_stack	*current;
-	int		min;
-	int		test;
+	t_stack	*min;
 
 	current = *b;
-	test = current->content;
+	min = create_stack(current->content);
+	min->index = current->index;
 	if (current->next == NULL)
 	{
-		sort_b_stack(a, b, test);
+		sort_b_stack(a, b, min->content);
+		free_lst(&min);
 		return ;
 	}
 	while (current != NULL)
 	{
-		if (current->index < test)
+		if (current->index < min->index)
 		{
-			test = current->index;
-			min = current->content;
+			min->index = current->index;
+			min->content = current->content;
 		}
 		current = current->next;
 	}
-	sort_b_stack(a, b, min);
+	sort_b_stack(a, b, min->content);
+	free_lst(&min);
 }
 
 void	sort_b_stack(t_stack **a, t_stack **b, int min)

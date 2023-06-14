@@ -6,7 +6,7 @@
 /*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:53:31 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/08 17:29:57 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/13 16:57:52 by ulysse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,33 +77,6 @@ void	to_list_a(char **argv, int argc, t_stack **stack_a)
 	}
 }
 
-// void	print_list(t_stack *stack)
-// {
-// 	while (stack != NULL)
-// 	{
-// 		printf ("%d\n", stack->content);
-// 		stack = stack->next;
-// 	}
-// }
-
-int	doublon(t_stack	*lst)
-{
-	t_stack	*tmp;
-
-	while (lst->next != NULL)
-	{
-		tmp = lst->next;
-		while (tmp != NULL)
-		{
-			if (lst->content == tmp->content)
-				error_exit();
-			tmp = tmp->next;
-		}
-		lst = lst->next;
-	}
-	return (1);
-}
-
 int	is_sort(t_stack *a)
 {
 	while (a->content > a->next->content)
@@ -115,27 +88,32 @@ int	is_sort(t_stack *a)
 	return (1);
 }
 
-int	main(int argc, char	**argv)
+int	main(int argc, char **argv)
 {
-	char	*line;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	char	*line;
 
 	stack_b = NULL;
-
+	if (argc < 2)
+	{
+		write (1, "OK\n", 3);
+		return (0);
+	}
 	to_list_a(argv, argc, &stack_a);
 	doublon(stack_a);
 	line = get_next_line(0);
 	while (line)
 	{
 		apply_function(&stack_a, &stack_b, line);
+		free(line);
 		line = get_next_line(0);
 	}
-	// print_list(stack_a);
 	if (is_sort(stack_a) == 1)
-		write (1, "ko", 2);
+		write (1, "KO\n", 3);
 	else
-		write (1, "ok", 2);
-	return (0);
+		write (1, "OK\n", 3);
 	free_lst(&stack_a);
+	free_lst(&stack_b);
+	return (0);
 }
