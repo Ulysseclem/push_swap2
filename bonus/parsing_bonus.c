@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:08:42 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/13 16:42:00 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/16 11:50:05 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ int	ps_atoi(const char *nptr)
 	return (nbr);
 }
 
-int ps_atoi_suite(const char *nptr, int i, int neg)
+int	ps_atoi_suite(const char *nptr, int i, int neg)
 {
 	long long int	num;
-	int		j;
-	int		test;
+	int				j;
+	int				test;
 
 	num = 0;
 	j = 0;

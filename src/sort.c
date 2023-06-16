@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 13:26:01 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/13 16:01:28 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/16 11:49:10 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	last_sort(t_stack **stack, t_stack **b)
 	int		count;
 
 	if (*b != NULL)
-		return;
+		return ;
 	current = *stack;
 	nbr = current->content;
 	count = 1;

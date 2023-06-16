@@ -48,16 +48,15 @@ OBJS        := $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 
 # BONUS --------------------------
 SRC_DIR_BONUS	:= bonus
-SRCS_BONUS		:=main.c \
-				get_next_line.c \
-				get_next_line_utils.c\
+SRCS_BONUS		:=main_bonus.c \
+				get_next_line_bonus.c \
+				get_next_line_utils_bonus.c\
 				swap_utils_bonus.c \
-				swap_function.c \
+				swap_function_bonus.c \
 				parsing_bonus.c
 
 SRCS_BONUS	:= $(SRCS_BONUS:%=$(SRC_DIR_BONUS)/%)
-BUILD_DIR_B   := .build_b
-OBJS_BONUS	:= $(SRCS_BONUS:$(SRC_DIR_BONUS)/%.c=$(BUILD_DIR_B)/%.o)
+OBJS_BONUS	:= $(SRCS_BONUS:$(SRC_DIR_BONUS)/%.c=$(BUILD_DIR)/%.o)
 
 # BONUS --------------------------
 DEPS        := $(OBJS:.o=.d)
@@ -117,7 +116,7 @@ $(BONUS): $(OBJS_BONUS)
 	$(CC) $(LDFLAGS) $(OBJS_BONUS) $(LDLIBS) -o $(BONUS)
 	$(info CREATED $(BONUS))
 
-$(BUILD_DIR_B)/%.o: $(SRC_DIR_BONUS)/%.c
+$(BUILD_DIR)/%.o: $(SRC_DIR_BONUS)/%.c
 	$(DIR_DUP)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 	$(info CREATED2 $@)

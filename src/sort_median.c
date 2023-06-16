@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_median.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:39:18 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/13 14:19:00 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/16 11:48:54 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	median_sort(t_stack **a, t_stack **b)
 				move(a, b, 6);
 			i++;
 			if (ps_lstsize(*a) == 3)
-				break;
+				break ;
 		}
 		size = ps_lstsize(*a);
 	}
