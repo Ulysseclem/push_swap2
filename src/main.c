@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 14:45:52 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/13 16:10:45 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/19 13:34:17 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	to_list_a(char **argv, int argc, t_stack **stack_a)
 	i = 1;
 	while (i < argc)
 	{
-		nbr = ps_atoi(argv[i]);
+		nbr = ps_atoi(argv[i], stack_a);
 		if (i == 1)
 			*stack_a = create_stack(nbr);
 		else

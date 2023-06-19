@@ -63,7 +63,7 @@ DEPS        := $(OBJS:.o=.d)
 DEPS_B        := $(OBJS_BONUS:.o=.d)
 
 CC          := clang
-CFLAGS      := -Wall -Wextra -Werror -g
+CFLAGS      := -Wall -Wextra -Werror
 CPPFLAGS    := $(addprefix -I,$(INCS)) -MMD -MP
 LDFLAGS     := $(addprefix -L,$(dir $(LIBS_TARGET)))
 LDLIBS      := $(addprefix -l,$(LIBS))

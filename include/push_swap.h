@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:28:29 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/16 09:42:38 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/19 13:34:10 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	print_move(int call);
 int		parsing(t_stack **a);
 int		doublon(t_stack	*lst);
 int		is_sort(t_stack **a);
-int		ps_atoi(const char *nptr);
-int		ps_atoi_suite(const char *nptr, int i, int neg);
+int		ps_atoi(const char *nptr, t_stack **a);
+int		ps_atoi_suite(const char *nptr, int i, int neg, t_stack **a);
 
 void	index_maker(t_stack **stack);
 void	median_sort(t_stack **a, t_stack **b);

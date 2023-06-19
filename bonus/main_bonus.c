@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:53:31 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/16 11:54:09 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:36:43 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	to_list_a(char **argv, int argc, t_stack **stack_a)
 	i = 0;
 	while (++i < argc)
 	{
-		nbr = ps_atoi(argv[i]);
+		nbr = ps_atoi(argv[i], stack_a);
 		if (nbr > 2147483647 || nbr < -2147483648)
 			error_exit();
 		if (i == 1)

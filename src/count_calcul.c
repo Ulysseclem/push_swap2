@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_calcul.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulysse <ulysse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:48:18 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/13 09:55:51 by ulysse           ###   ########.fr       */
+/*   Updated: 2023/06/19 11:12:28 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	compteur(t_instruct *count, int call)
 		count->rrr = 1 + count->rrr;
 }
 
+/*cherche la valeur qui coute le moins de coups*/
+
 void	search_index_min(t_stack **a, t_stack **b)
 {
 	t_stack	*current;
@@ -82,6 +84,8 @@ void	search_index_min(t_stack **a, t_stack **b)
 	free_lst(&min);
 }
 
+/* deplace la stack b pour avoir la valeur la plus petite (en coup) 
+vers le haut*/
 void	sort_b_stack(t_stack **a, t_stack **b, int min)
 {
 	int	i;

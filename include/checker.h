@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 11:34:14 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/16 11:48:12 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:36:22 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ t_stack	*ps_lstlast(t_stack *lst);
 void	ps_lstadd_front(t_stack **lst, t_stack *new);
 
 void	doublon(t_stack	*lst);
-int		ps_atoi(const char *nptr);
-int		ps_atoi_suite(const char *nptr, int i, int neg);
+int		ps_atoi(const char *nptr, t_stack **a);
+int		ps_atoi_suite(const char *nptr, int i, int neg, t_stack **a);
 
 void	push(t_stack **receiver, t_stack **sender);
 void	push_suite(t_stack **receiver, t_stack *curr);

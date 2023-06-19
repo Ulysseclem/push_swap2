@@ -6,12 +6,14 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 11:49:48 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/01 11:17:10 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/19 11:08:38 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+
+/* calcul le nombre de coup pour acceder a un nombre*/
 
 void	iter_index(t_stack **a, t_stack **b)
 {
@@ -42,6 +44,8 @@ void	iter_index(t_stack **a, t_stack **b)
 	search_index_min(a, b);
 }
 
+/*cherche la position ou placer le nombre de stack_b*/
+
 void	index_find_pos(t_stack **a, t_stack **b)
 {
 	t_stack	*current;
@@ -64,6 +68,8 @@ void	index_find_pos(t_stack **a, t_stack **b)
 	}
 	index_sort(a, b, count);
 }
+
+/*trie la stack a pour pouvoir positionner le nombre B*/
 
 void	index_sort(t_stack **a, t_stack **b, int count)
 {

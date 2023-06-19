@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:12:39 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/16 11:49:58 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:41:02 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,9 @@ void	apply_function(t_stack **a, t_stack **b, char *readed)
 		reverse(a);
 	else if (ft_strncmp (readed, "rrb\n", 4) == 0)
 		reverse(b);
+	else
+	{
+		free_lst (a);
+		error_exit();
+	}
 }

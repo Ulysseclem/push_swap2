@@ -6,12 +6,14 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 13:26:01 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/16 11:49:10 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/19 11:13:49 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+
+/*cherche la position ou placer le nombre de stack_b*/
 
 void	find_pos(t_stack **a, t_stack **b)
 {
@@ -35,6 +37,9 @@ void	find_pos(t_stack **a, t_stack **b)
 	}
 	sort(a, b, count);
 }
+
+/*range a pour pouvoir push B dessus*/
+
 
 void	sort(t_stack **a, t_stack **b, int count)
 {
