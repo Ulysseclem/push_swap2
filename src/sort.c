@@ -6,7 +6,7 @@
 /*   By: uclement <uclement@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 13:26:01 by uclement          #+#    #+#             */
-/*   Updated: 2023/06/19 11:13:49 by uclement         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:42:49 by uclement         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	find_pos(t_stack **a, t_stack **b)
 }
 
 /*range a pour pouvoir push B dessus*/
-
 
 void	sort(t_stack **a, t_stack **b, int count)
 {
